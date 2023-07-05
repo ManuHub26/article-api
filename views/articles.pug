@@ -1,0 +1,25 @@
+extends layout.pug
+
+block content
+    h1 Les articles
+
+    table.table
+        thead
+            tr
+                th Titre
+                th Contenu
+                th J'aime
+                th Commentaires
+                th Supprimer
+        tbody
+            each article in articles
+                div(style='display:none;', id='articleId')= article._id
+                tr
+                    td= article.title
+                    td= article.content
+                    td= article.applauseCount
+                    td= article.comments
+                    td
+                        button.btn.btn-error(id='deleteArticleButton') Supprimer
+
+    script(src="/js/deleteArticle.js")

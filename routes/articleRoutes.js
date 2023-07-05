@@ -26,7 +26,7 @@ router.get("/:id/comments", async (req, res) => {
 });
 router.post("/:id/comments", comments);
 router.post("/:id/applaud", applaud);
-router.post("/:id/delete", deleteArticles);
+router.get("/:id/delete", deleteArticles);
 router.post("/:id/update", updateArticle);
 
 module.exports = router;

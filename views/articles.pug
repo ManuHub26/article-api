@@ -13,13 +13,10 @@ block content
                 th Supprimer
         tbody
             each article in articles
-                div(style='display:none;', id='articleId')= article._id
                 tr
                     td= article.title
                     td= article.content
                     td= article.applauseCount
                     td= article.comments
                     td
-                        button.btn.btn-error(id='deleteArticleButton') Supprimer
-
-    script(src="/js/deleteArticle.js")
+                        a.btn.btn-error(href='/api/articles/' + article.id + '/delete') Supprimer
